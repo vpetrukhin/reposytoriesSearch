@@ -1,0 +1,32 @@
+.search {
+  display: flex;
+  &__input {
+    width: 85%;
+    margin-right: 5px;
+    padding: 5px;
+    border: none;
+    font-weight: 400;
+    font-size: 20px;
+    color: $main-font-color;
+    border-bottom: 1px solid $main-font-color;
+    background: transparent;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $second-font-color;
+    }
+  }
+  &__btn {
+    width: 15%;
+    font-weight: 400;
+    font-size: 20px;
+    color: $main-font-color;
+    border: 1px solid $main-font-color;
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $second-font-color;
+      color: $second-font-color;
+    }
+  }
+}
