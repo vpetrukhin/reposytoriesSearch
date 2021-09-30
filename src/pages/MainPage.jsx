@@ -1,3 +1,4 @@
+import { RepotoriesList } from "../components/RepotoriesList";
 import { SearchInput } from "../components/SearchInput";
 
 export const MainPage = () => {
@@ -13,7 +14,9 @@ export const MainPage = () => {
           <SearchInput onSearch={onSearch} />
         </div>
       </header>
-      <main className="main">Список репозитриев</main>
+      <main className="main">
+        <RepotoriesList />
+      </main>
     </>
   );
 };

@@ -1,0 +1,15 @@
+.repositories {
+  &__loading-text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+  }
+  &__error-text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: $error-font-color;
+  }
+}
