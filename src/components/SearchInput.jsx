@@ -6,7 +6,9 @@ export const SearchInput = ({ onSearch }) => {
   const changeHandler = (e) => setInputValue(e.target.value);
 
   const searchHandler = () => {
-    onSearch(inputValue);
+    if (inputValue.trim !== "") {
+      onSearch(inputValue);
+    }
     setInputValue("");
   };
 

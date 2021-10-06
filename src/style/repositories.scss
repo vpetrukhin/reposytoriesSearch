@@ -1,15 +1,29 @@
 .repositories {
   &__loading-text {
+    height: calc(100vh - 130px);
     margin: 0;
     font-weight: 400;
     font-size: 22px;
     text-align: center;
   }
   &__error-text {
+    height: calc(100vh - 130px);
     margin: 0;
     font-weight: 400;
     font-size: 20px;
     text-align: center;
     color: $error-font-color;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__item {
+    padding-bottom: 20px;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $main-font-color;
+      margin-bottom: 20px;
+    }
   }
 }
