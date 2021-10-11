@@ -5,7 +5,7 @@ export const RepotoriesList = ({ loading, error, repoList }) => {
     <div className="repositories container">
       {loading && <p className="repositories__loading-text">Загрузка...</p>}
       {error && <p className="repositories__error-text">{error.message}</p>}
-      {repoList.length === 0 && (
+      {repoList.length === 0 && !loading && (
         <p className="repositories__loading-text">
           Выполните поиск или если вы уже попытались найти, попробуйте снова с
           другим запросом

@@ -7,13 +7,16 @@ export const RepositoryCard = ({ card }) => {
       </h2>
       <p className="repository__description">{card.description}</p>
       <div className="repository__footer">
-        <div className="repository__lang">
-          <div
-            className="repository__lang-circle"
-            style={{ backgroundColor: card.lang[0]?.color }}
-          />
-          <p className="repository__lang-text">{card.lang[0]?.langName}</p>
-        </div>
+        {card.lang.length !== 0 && (
+          <div className="repository__lang">
+            <div
+              className="repository__lang-circle"
+              style={{ backgroundColor: card.lang[0]?.langColor }}
+            />
+            <p className="repository__lang-text">{card.lang[0]?.langName}</p>
+          </div>
+        )}
+
         <span className="repository__star">{card.stars}</span>
       </div>
     </article>

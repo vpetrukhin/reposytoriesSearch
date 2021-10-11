@@ -8,7 +8,7 @@ export const App = () => {
     uri: "https://api.github.com/graphql",
     cache: new InMemoryCache(),
     headers: {
-      authorization: "Bearer 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",
+      authorization: "Bearer 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",
     },
   });
 
