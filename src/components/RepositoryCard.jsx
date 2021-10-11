@@ -1,7 +1,7 @@
 export const RepositoryCard = ({ card }) => {
   return (
     <article className="repository">
-      {/* Заголовок = ссылка */}
+      {/* вся карточка это ссылка */}
       <h2 className="repository__title">
         {card.owner}/{card.name}
       </h2>

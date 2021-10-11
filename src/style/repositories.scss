@@ -1,4 +1,5 @@
 .repositories {
+  min-height: calc(100vh - 150px);
   &__loading-text {
     height: calc(100vh - 130px);
     margin: 0;

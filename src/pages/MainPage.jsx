@@ -32,10 +32,6 @@ export const MainPage = () => {
     }
   `;
 
-  useEffect(() => {
-    loadRepoList({ variables: { title: 0 } });
-  }, []);
-
   const [loadRepoList, { loading, error, data }] = useLazyQuery(REPO_LIST);
 
   const getRepositoryList = (data) => {
@@ -56,14 +52,13 @@ export const MainPage = () => {
     }));
   };
 
-  const searchHandler = async (inputValue) => {
+  const searchHandler = (inputValue) => {
     loadRepoList({ variables: { title: inputValue } });
-    setRepoList(getRepositoryList(data));
-    if (data) {
-    }
   };
 
-  // console.log(data, loading, error);
+  useEffect(() => {
+    setRepoList(getRepositoryList(data));
+  }, [data]);
 
   return (
     <>

@@ -1,19 +1,14 @@
 import { RepositoryCard } from "./RepositoryCard";
 
 export const RepotoriesList = ({ loading, error, repoList }) => {
-  console.log(repoList);
   return (
     <div className="repositories container">
-      {repoList.length === 0 && (
-        <p className="repositories__loading-text">
-          Ничего не найдено попробуйте еще раз
-        </p>
-      )}
       {loading && <p className="repositories__loading-text">Загрузка...</p>}
       {error && <p className="repositories__error-text">{error.message}</p>}
-      {!repoList && (
+      {repoList.length === 0 && (
         <p className="repositories__loading-text">
-          Выполните поиск репозиториев
+          Выполните поиск или если вы уже попытались найти, попробуйте снова с
+          другим запросом
         </p>
       )}
       {repoList.length !== 0 && (
