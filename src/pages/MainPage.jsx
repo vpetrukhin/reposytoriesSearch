@@ -1,36 +1,11 @@
-import { gql, useLazyQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
 import { RepotoriesList } from "../components/RepotoriesList";
 import { SearchInput } from "../components/SearchInput";
+import { REPO_LIST } from "../graphql/queries";
 
 export const MainPage = () => {
   const [repoList, setRepoList] = useState([]);
-
-  const REPO_LIST = gql`
-    query getList($title: String!) {
-      search(query: $title, type: REPOSITORY, first: 10) {
-        nodes {
-          ... on Repository {
-            name
-            owner {
-              login
-            }
-            id
-            description
-            languages(first: 1) {
-              edges {
-                node {
-                  color
-                  name
-                }
-              }
-            }
-            stargazerCount
-          }
-        }
-      }
-    }
-  `;
 
   const [loadRepoList, { loading, error, data }] = useLazyQuery(REPO_LIST);
 

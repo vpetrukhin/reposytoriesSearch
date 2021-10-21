@@ -8,7 +8,7 @@ export const App = () => {
     uri: "https://api.github.com/graphql",
     cache: new InMemoryCache(),
     headers: {
-      authorization: "Bearer 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",
+      authorization: "Bearer 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",
     },
   });
 
@@ -20,9 +20,10 @@ export const App = () => {
             <Route path="/" exact>
               <MainPage />
             </Route>
-            <Route path="/post/:id">
-              <PostPage />
-            </Route>
+            <Route
+              path="/post/:id"
+              render={({ match }) => <PostPage match={match} />}
+            />
           </Switch>
         </div>
       </BrowserRouter>
